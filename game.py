@@ -4,6 +4,14 @@ import time
 
 # 23.9.2018. made by Fran Maric FM :)
 
+
+speed = 8  # brzina micanja broda
+b_speed = 10  # brzina metka
+a_b_speed = 10  # brzina svemirskog metka
+alien_bullet_amount = 80  # veci broj manja sansa za metak
+
+score = 0  # varijabla za pohranu rezultata
+
 pygame.init()
 display_width = 800
 display_height = 650
@@ -16,15 +24,10 @@ colors = [(249, 200, 14), (248, 102, 36), (234, 53, 70),
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Space invaders FM')
 clock = pygame.time.Clock()
-shipImg = pygame.image.load('Sprites//shipImg.png')
-bulletImg = pygame.image.load('Sprites//bulletImg.png')
-game_over = pygame.image.load('Sprites//game_over.png')
+shipImg = pygame.image.load('sprites//shipImg.png')
+bulletImg = pygame.image.load('sprites//bulletImg.png')
+game_over = pygame.image.load('sprites//game_over.png')
 out = False
-speed = 8  # brzina micanja broda
-b_speed = 10  # brzina metka
-a_b_speed = 10  # brzina svemirskog metka
-score = 0  # varijabla za pohranu rezultata
-alien_bullet_amount = 80  # veci broj manja sansa za metak
 
 
 def colorize(image, newColor):  # function from internet because I don't know this shit :)
