@@ -219,7 +219,6 @@ while not out:
                 if event.key == pygame.K_RIGHT:
                     xdir = 1
                 if event.key == pygame.K_SPACE:
-
                     if len(bullets) < ((score//1000 + 3) if powerup_activated else 2):
                         bullets.append(Bullet(ship.x))
             if event.type == pygame.KEYUP:
@@ -238,9 +237,6 @@ while not out:
                 k = 1
             boom = 0
             explosions = []
-            p_animation += 1
-            if p_animation > 5:
-                p_animation = 0
             if powerup_activated:
                 powerup_timer -= 1
                 if powerup_timer == 0:
@@ -287,7 +283,7 @@ while not out:
             powerup = PowerUp()
         elif powerup != 0:
             powerup.move()
-            powerup.show(p_animation)
+            powerup.show(n//3)
             if powerup.checkHit():
                 powerup_activated = True
 
