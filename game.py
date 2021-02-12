@@ -245,7 +245,7 @@ while not out:
                     boom = 1
                     score = 0
                     gameDisplay.blit(colorize(game_over, (0, 0, 0)),
-                                     (display_width/2-209, display_height/2-159.5))
+                                     (int(display_width/2-209), int(display_height/2-159.5)))
                     pygame.display.update()
                     time.sleep(2)
                     while game:
