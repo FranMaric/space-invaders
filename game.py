@@ -8,8 +8,8 @@ import time
 speed = 8  # brzina micanja broda
 b_speed = 10  # brzina metka
 a_b_speed = 10  # brzina svemirskog metka
-alien_bullet_amount = 80  # veci broj manja sansa za metak
-power_up_amount = 100  # veci broj manja sansa za powerup
+alien_bullet_amount = 69  # veci broj manja sansa za metak
+power_up_amount = 300  # veci broj manja sansa za powerup
 p_speed = 6  # brzina padanja powerup-a
 p_duration = 20
 
