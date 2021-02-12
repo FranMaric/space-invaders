@@ -308,11 +308,13 @@ while not out:
                 else:
                     lifes = 0
                     boom = 1
+                    scoreboard()
                     score = 0
                     gameDisplay.blit(colorize(game_over, (0, 0, 0)),
                                      (int(display_width/2-209), int(display_height/2-159.5)))
                     pygame.display.update()
-                    time.sleep(2)
+                    time.sleep(3)
+                    pygame.event.get()
                     while game:
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
@@ -329,7 +331,7 @@ while not out:
             for i in range(10):
                 for j in range(3):
                     aliens.append(Alien(i*70+55, j*50+60))
-            if alien_bullet_amount >= 5:
+            if alien_bullet_amount >= 10:
                 alien_bullet_amount -= 5
         n += 1
 
