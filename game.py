@@ -119,7 +119,7 @@ class PowerUp:  # klasa powerup
 
     def checkHit(self):
         global score
-        if ship.x < self.x < ship.x+56 and self.y > display_height-30:
+        if (ship.x < self.x < ship.x+56 or ship.x < self.x+32 < ship.x+56) and self.y > display_height-30:
             score += 100
             self.toDelete = True
             return True
