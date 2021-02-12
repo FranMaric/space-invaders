@@ -135,9 +135,9 @@ class Alien:  # klasa svemirko
 
     def show(self, i):
         if i == 1:
-            gameDisplay.blit(self.img, (self.x, self.y))
+            gameDisplay.blit(self.img, (int(self.x), int(self.y)))
         else:
-            gameDisplay.blit(self.img1, (self.x, self.y))
+            gameDisplay.blit(self.img1, (int(self.x), int(self.y)))
 
 
 ship = Ship()
