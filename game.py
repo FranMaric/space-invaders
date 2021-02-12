@@ -10,25 +10,6 @@ b_speed = 10  # brzina metka
 a_b_speed = 10  # brzina svemirskog metka
 alien_bullet_amount = 80  # veci broj manja sansa za metak
 
-score = 0  # varijabla za pohranu rezultata
-
-pygame.init()
-display_width = 800
-display_height = 650
-
-background = (240, 240, 255)
-backgroundExplosion = (90, 20, 0)
-colors = [(249, 200, 14), (248, 102, 36), (234, 53, 70),
-          (102, 46, 155), (67, 188, 205)]
-
-gameDisplay = pygame.display.set_mode((display_width, display_height))
-pygame.display.set_caption('Space invaders FM')
-clock = pygame.time.Clock()
-shipImg = pygame.image.load('sprites//shipImg.png')
-bulletImg = pygame.image.load('sprites//bulletImg.png')
-game_over = pygame.image.load('sprites//game_over.png')
-out = False
-
 
 def colorize(image, newColor):  # function from internet because I don't know this shit :)
     image = image.copy()
@@ -140,6 +121,26 @@ class Alien:  # klasa svemirko
             gameDisplay.blit(self.img1, (int(self.x), int(self.y)))
 
 
+score = 0  # varijabla za pohranu rezultata
+
+pygame.init()
+display_width = 800
+display_height = 650
+
+background = (240, 240, 255)
+backgroundExplosion = (90, 20, 0)
+colors = [(249, 200, 14), (248, 102, 36), (234, 53, 70),
+          (102, 46, 155), (67, 188, 205)]
+
+gameDisplay = pygame.display.set_mode((display_width, display_height))
+pygame.display.set_caption('Space invaders FM')
+clock = pygame.time.Clock()
+shipImg = pygame.image.load('sprites//shipImg.png')
+bulletImg = pygame.image.load('sprites//bulletImg.png')
+exploImg = colorize(pygame.image.load('Sprites//explosion.png'), (255, 0, 0))
+game_over = pygame.image.load('sprites//game_over.png')
+out = False
+
 ship = Ship()
 
 while not out:
@@ -190,8 +191,6 @@ while not out:
             if boom == 1:
                 gameDisplay.fill(backgroundExplosion)
             for i in explosions:
-                exploImg = colorize(pygame.image.load(
-                    'Sprites//explosion.png'), (255, 0, 0))
                 gameDisplay.blit(exploImg, (i[0], i[1]))
         ship.move(xdir)
         if ship.x < 0:
