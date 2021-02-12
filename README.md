@@ -5,3 +5,4 @@ Simple space invaders python game made using pygame.
 Object oriented programming  
 Sprite animations  
 Colliders  
+PowerUps
