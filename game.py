@@ -40,9 +40,9 @@ def colorize(image, newColor):  # function from internet because I don't know th
 def scoreboard():  # funkcija za prikazivanje igracevih statusa
     for i in range(2, lifes-1, -1):
         gameDisplay.blit(colorize(shipImg, (255, 0, 0)),
-                         (display_width-(i+1)*60-20, 15))
+                         (int(display_width-(i+1)*60-20), 15))
     for i in range(lifes-1, -1, -1):
-        gameDisplay.blit(shipImg, (display_width-(i+1)*60-20, 15))
+        gameDisplay.blit(shipImg, (int(display_width-(i+1)*60-20), 15))
     pygame.draw.line(gameDisplay, (255, 0, 0), (0, 50), (display_width, 50), 3)
     message('Score: '+str(score), 80+len(str(score))*15, 28, (123, 0, 0))
 
@@ -103,7 +103,7 @@ class Alien_Bullet:  # klasa alien metak
             self.toDelete = True
 
     def show(self):
-        gameDisplay.blit(bulletImg, (self.x, self.y))
+        gameDisplay.blit(bulletImg, (int(self.x), int(self.y)))
 
     def checkHit(self):
         if self.y > display_height-32 and (ship.x < self.x < ship.x+56 or ship.x < self.x+5 < ship.x+56):
